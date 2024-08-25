@@ -28,7 +28,7 @@ legend{
   left: 50%;
   transform: translate(-50%, -50%);
   position: fixed;
-  width: 80%;
+  width: 50%;
   border: 3px solid white;
   text-align: justify;
   padding: 20px;
@@ -112,4 +112,23 @@ select {
     color: inherit;
     background-color: var(--option-bg);
   }
+}
+
+
+
+@media only screen and (max-width: 600px){
+  .form{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: fixed;
+    width: 85%;
+    border: 3px solid white;
+    text-align: justify;
+    padding: 20px;
+    padding-left: 20px;
+    border-radius: 20px;
+    backdrop-filter: blur(5px);
+    background-color: rgba(0,0,0,0.1);
+}
 }
