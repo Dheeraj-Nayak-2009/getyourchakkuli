@@ -4,8 +4,9 @@
   --option-bg: white;
   --select-bg: rgba(255, 255, 255, 0.2);
 }
-body{
-  font-family: Poppins;
+
+body {
+  font-family: Poppins, sans-serif;
   width: 100%;
   height: 100vh;
   padding: 10px;
@@ -16,88 +17,91 @@ body{
   background-image: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRqYjBVFkghv9bxbaZ3iENZnDLEkulTVOb52WvTy50uCyDYxfxKsSl7XboG&s=10');
   background-size: 130% 100%;
   background-attachment: fixed;
-  
 }
-legend{
+
+legend {
   color: white;
-  font-size: 52px;
+  font-size: 8vw; /* Increased font size for mobile */
   font-weight: 600;
 }
-.form{
+
+.form {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   position: fixed;
-  width: 85%;
+  width: 85%; /* Adjusted width for mobile */
+  max-width: 800px; /* Limit max width for larger screens */
   border: 3px solid white;
   text-align: justify;
   padding: 20px;
-  padding-left: 20px;
   border-radius: 20px;
   backdrop-filter: blur(5px);
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0, 0, 0, 0.1);
 }
-form label{
+
+form label {
   margin-right: 10px;
   color: white;
-  font-size: 43px;
+  font-size: 7vw; /* Increased font size for mobile */
 }
-#msglbl{
+
+#msglbl {
   position: relative;
   left: 50%;
-  display: block; /* or inline-block, depending on your needs */
+  display: block;
   width: fit-content;
   transform: translateX(-50%);
 }
-form textarea{
+
+form textarea {
   width: 80%;
   background-color: var(--select-bg);
   border: 1px solid white;
   border-radius: 5px;
-  font-family: Poppins;
-  font-size: 43px;
+  font-family: Poppins, sans-serif;
+  font-size: 7vw; /* Increased font size for mobile */
   color: white;
   margin-left: 50%;
   margin-bottom: 30px;
   transform: translateX(-50%);
   padding: 5px;
 }
-form input{
+
+form input {
   margin-bottom: 30px;
   width: 67%;
   color: white;
   background-color: var(--select-bg);
   border: 1px solid white;
   border-radius: 5px;
-  font-size: 43px;
+  font-size: 7vw; /* Increased font size for mobile */
 }
 
-form button{
-  
+form button {
   margin-top: 20px;
   margin-left: 50%;
   margin-bottom: 20px;
   transform: translateX(-50%);
-  width: 50%;
+  width: 60%;
   color: white;
   padding: 5px;
   background-color: var(--select-bg);
   border: 1px solid white;
   border-radius: 20px;
-  font-size: 43px;
+  font-size: 7vw; /* Increased font size for mobile */
   font-weight: 500;
   box-shadow: 0px 0px 4px 4px #ff2e2e;
 }
+
 select {
-  /* Reset */
   appearance: none;
   margin: 0px 0 10px 0;
   border: 0;
   outline: 0;
   font: inherit;
-  font-size: 40px;
-  /* Personalize */
-  width: 70%;
+  font-size: 7vw; /* Increased font size for mobile */
+  width: 80%;
   padding: 0.3rem 4rem 0.3rem 1rem;
   background: var(--arrow-icon) no-repeat right 0.8em center / 1.4em,
     linear-gradient(to left, var(--arrow-bg) 3em, var(--select-bg) 3em);
@@ -105,36 +109,90 @@ select {
   border-radius: 0.25em;
   box-shadow: 0 0 1em 0 rgba(0, 0, 0, 0.2);
   cursor: pointer;
-  /* Remove IE arrow */
-  &::-ms-expand {
-    display: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+select:focus {
+  outline: none;
+}
+
+select option {
+  color: inherit;
+  background-color: var(--option-bg);
+}
+
+/* Media queries for larger screens */
+@media (min-width: 425px) and (max-width: 767px) {
+  legend {
+    font-size: 6vw;
   }
-  /* Remove focus outline */
-  &:focus {
-    outline: none;
+
+  form label,
+  form textarea,
+  form input,
+  form button,
+  select {
+    font-size: 5vw;
   }
-  /* <option> colors */
-  option {
-    color: inherit;
-    background-color: var(--option-bg);
+
+  .form {
+    width: 90%;
   }
 }
 
+@media (min-width: 768px) {
+  legend {
+    font-size: 4vw;
+  }
 
+  form label,
+  form textarea,
+  form input,
+  form button,
+  select {
+    font-size: 3.5vw;
+  }
 
-@media only screen and (min-width: 600px){
-  .form{
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    position: fixed;
-    width: 85%;
-    border: 3px solid white;
-    text-align: justify;
-    padding: 20px;
-    padding-left: 20px;
-    border-radius: 20px;
-    backdrop-filter: blur(5px);
-    background-color: rgba(0,0,0,0.1);
+  .form {
+    width: 70%;
+  }
 }
+
+@media (min-width: 1024px) {
+  legend {
+    font-size: 3vw;
+  }
+
+  form label,
+  form textarea,
+  form input,
+  form button,
+  select {
+    font-size: 2.5vw;
+  }
+
+  .form {
+    width: 60%;
+  }
+}
+
+@media (min-width: 1440px) {
+  legend {
+    font-size: 2.5vw;
+  }
+
+  form label,
+  form textarea,
+  form input,
+  form button,
+  select {
+    font-size: 2vw;
+  }
+
+  .form {
+    width: 50%;
+  }
 }
